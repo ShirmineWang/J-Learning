@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.Entity;
+using J_LearingSystem.Models;
+
+namespace J_LearningSystem.Data
+{
+    public class SystemContext : DbContext
+    {
+        public SystemContext()
+            :base()
+        {
+        }
+
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Forum> Forums { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<QuestionOption> QuestionOptions { get; set; }
+        public DbSet<Quiz> Quizs { get; set; }
+        public DbSet<Reply> Replies { get; set; }
+        public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<Staff> Staffs { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Topic> Topics { get; set; }
+        public DbSet<Video> Videos { get; set; }
+    }
+}
