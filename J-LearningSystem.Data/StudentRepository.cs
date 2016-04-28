@@ -21,6 +21,7 @@ namespace J_LearningSystem.Data
         }
         public void Add(Student student)
         {
+            /*add student's courses
             for(int i = 0; i < student.Courses.Count; i++)
             {
                 string courseId = student.Courses[i].CourseId;
@@ -30,6 +31,8 @@ namespace J_LearningSystem.Data
                     student.Courses[i] = existingCourse;
                 }
             }
+            */
+            /*add student's answers
             for(int i = 0; i < student.Answers.Count; i++)
             {
                 string answerId = student.Answers[i].AnswerId;
@@ -39,6 +42,7 @@ namespace J_LearningSystem.Data
                     student.Answers[i] = existingAnswer;
                 }
             }
+            */
             db.Students.Add(student);              
         }
         public IEnumerable<Course> GetAllCourses()
