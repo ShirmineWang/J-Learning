@@ -49,6 +49,6 @@ namespace J_LearingSystem.Models
                 schedules = value;
             }
         }
-        public virtual Forum Forum { get; set; }
+//        public virtual Forum Forum { get; set; }
     }
 }

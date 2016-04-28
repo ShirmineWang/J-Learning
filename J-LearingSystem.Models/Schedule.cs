@@ -9,12 +9,13 @@ namespace J_LearingSystem.Models
 {
     public class Schedule
     {
-        [Key][Required]
-        public string ScheduleId;
+        [Key]
         [Required]
-        public DateTime StartTime;
+        public string ScheduleId { get; set; }
         [Required]
-        public DateTime StopTime;
+        public DateTime StartTime { get; set; }
+        [Required]
+        public DateTime StopTime { get; set; }
 
         private List<Course> courses = new List<Course>();
         public virtual List<Course> Courses
