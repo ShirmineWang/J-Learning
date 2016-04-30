@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="CourseRepository.cs" />
+    <Compile Include="QuizRepository.cs" />
     <Compile Include="StaffRepository.cs" />
     <Compile Include="StudentRepository.cs" />
     <Compile Include="SystemContext.cs" />
