@@ -16,10 +16,11 @@ namespace J_LearningSystem.Data
         void Save();
     }
 
-    public class Repository<T> : IRepository<T> where T : class {
+    public class BaseRepository<T> : IRepository<T> where T : class {
         protected SystemContext _db = null;
 
-        public Repository(SystemContext db)
+//        public BaseRepository(SystemContext db)
+        public BaseRepository()
         {
             _db = db;
         }
@@ -47,7 +48,5 @@ namespace J_LearningSystem.Data
         {
             _db.SaveChanges();
         }
-
-        //haha
     }
 }

@@ -7,6 +7,14 @@ using J_LearingSystem.Models;
 
 namespace J_LearningSystem.Data
 {
+    public class StudentRepository : BaseRepository<Student>
+    {
+        public StudentRepository() : base()
+        {
+
+        }
+    }
+    /*
     public class StudentRepository
     {
         SystemContext db = new SystemContext();
@@ -32,35 +40,36 @@ namespace J_LearningSystem.Data
                 }
             }
             */
-            /*add student's answers
-            for(int i = 0; i < student.Answers.Count; i++)
-            {
-                string answerId = student.Answers[i].AnswerId;
-                Answer existingAnswer = db.Answers.SingleOrDefault(e => e.AnswerId == answerId);
-                if (existingAnswer != null)
-                {
-                    student.Answers[i] = existingAnswer;
-                }
-            }
-            */
-            db.Students.Add(student);              
-        }
-        public IEnumerable<Course> GetAllCourses()
+    /*add student's answers
+    for(int i = 0; i < student.Answers.Count; i++)
+    {
+        string answerId = student.Answers[i].AnswerId;
+        Answer existingAnswer = db.Answers.SingleOrDefault(e => e.AnswerId == answerId);
+        if (existingAnswer != null)
         {
-            return db.Courses;
-        }
-        public IEnumerable<Answer> GetAllAnswers()
-        {
-            return db.Answers;
-        }
-        public void Delete(string id)
-        {
-            Student student = db.Students.Single(s => s.MatricId == id);
-            db.Students.Remove(student);
-        }
-        public void Save()
-        {
-            db.SaveChanges();
+            student.Answers[i] = existingAnswer;
         }
     }
+
+    db.Students.Add(student);              
+}
+public IEnumerable<Course> GetAllCourses()
+{
+    return db.Courses;
+}
+public IEnumerable<Answer> GetAllAnswers()
+{
+    return db.Answers;
+}
+public void Delete(string id)
+{
+    Student student = db.Students.Single(s => s.MatricId == id);
+    db.Students.Remove(student);
+}
+public void Save()
+{
+    db.SaveChanges();
+}
+}
+*/
 }

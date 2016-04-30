@@ -7,6 +7,14 @@ using J_LearingSystem.Models;
 
 namespace J_LearningSystem.Data
 {
+    public class StaffRepository : BaseRepository<Staff>
+    {
+        public StaffRepository() : base()
+        {
+
+        }
+    }
+    /*
     public class StaffRepository
     {
         SystemContext db = new SystemContext();
@@ -48,4 +56,5 @@ namespace J_LearningSystem.Data
             db.SaveChanges();
         }
     }
+    */
 }

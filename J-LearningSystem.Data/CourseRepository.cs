@@ -7,9 +7,9 @@ using J_LearingSystem.Models;
 
 namespace J_LearningSystem.Data
 {
-    public class CourseRepository : Repository<Course>
+    public class CourseRepository : BaseRepository<Course>
     {
-        public CourseRepository(SystemContext db) : base(db)
+        public CourseRepository() : base()
         {
 
         }
