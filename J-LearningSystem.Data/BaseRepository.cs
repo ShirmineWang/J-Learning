@@ -10,7 +10,6 @@ namespace J_LearningSystem.Data
         void Add(T entity);
         void Remove(T entity);
         T GetById(string id);
-
         IQueryable<T> GetAll();
 
         void Save();
@@ -19,8 +18,7 @@ namespace J_LearningSystem.Data
     public class BaseRepository<T> : IRepository<T> where T : class {
         protected SystemContext _db = null;
 
-//        public BaseRepository(SystemContext db)
-        public BaseRepository()
+        public BaseRepository(SystemContext db)
         {
             _db = db;
         }

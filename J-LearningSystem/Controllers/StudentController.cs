@@ -12,20 +12,21 @@ namespace J_LearningSystem.Controllers
 {
     public class StudentController : Controller
     {
-//        SystemContext sc = new SystemContext();
+        //        SystemContext sc = new SystemContext();
 
-        StudentRepository rep = new StudentRepository();
+        UnitOfWork uow = new UnitOfWork();
+       
         // GET: Student
         public ActionResult Index()
         {
-            IEnumerable<Student> students = rep.GetAll(); 
+            IEnumerable<Student> students = uow.StudentRepository.GetAll(); 
             return View(students);
         }
 
         // GET: Student/Details/5
         public ActionResult Details(string id)
         {
-            Student student = rep.GetById(id);
+            Student student = uow.StudentRepository.GetById(id);
             return View(student);
         }
 
@@ -43,8 +44,8 @@ namespace J_LearningSystem.Controllers
             try
             {
                 // TODO: Add insert logic here
-                rep.Add(student);
-                rep.Save();
+                uow.StudentRepository.Add(student);
+                uow.StudentRepository.Save();
                 return RedirectToAction("Index");
             }
             catch(Exception e)
@@ -67,7 +68,7 @@ namespace J_LearningSystem.Controllers
         // GET: Student/Edit/5
         public ActionResult Edit(string id)
         {
-            Student student = rep.GetById(id);
+            Student student = uow.StudentRepository.GetById(id);
             return View(student);
         }
 
@@ -78,10 +79,10 @@ namespace J_LearningSystem.Controllers
             try
             {
                 // TODO: Add update logic here
-                Student student = rep.GetById(id);
+                Student student = uow.StudentRepository.GetById(id);
                 UpdateModel(student);
 
-                rep.Save();
+                uow.StudentRepository.Save();
                 return RedirectToAction("Index");
             }
             catch(Exception e)
@@ -104,7 +105,7 @@ namespace J_LearningSystem.Controllers
         // GET: Student/Delete/5
         public ActionResult Delete(string id)
         {
-            return View(rep.GetById(id));
+            return View(uow.StudentRepository.GetById(id));
         }
 
         // POST: Student/Delete/5
@@ -114,8 +115,8 @@ namespace J_LearningSystem.Controllers
             try
             {
                 // TODO: Add delete logic here
-                rep.Remove(rep.GetById(id));
-                rep.Save();
+                uow.StudentRepository.Remove(uow.StudentRepository.GetById(id));
+                uow.StudentRepository.Save();
                 return RedirectToAction("Index");
             }
             catch
