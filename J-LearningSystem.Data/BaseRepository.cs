@@ -22,7 +22,7 @@ namespace J_LearningSystem.Data
 //        public BaseRepository(SystemContext db)
         public BaseRepository()
         {
-            _db = db;
+            //_db = db;
         }
         public void Add(T entity)
         {
