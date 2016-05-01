@@ -3,52 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using J_LearningSystem.Models;
 using J_LearningSystem.Data;
 using J_LearingSystem.Models;
 using System.Data.Entity.Validation;
 
 namespace J_LearningSystem.Controllers
 {
-    public class StudentController : Controller
+    public class CourseController : Controller
     {
-        //        SystemContext sc = new SystemContext();
-
         UnitOfWork uow = UnitOfWorkHelper.GetUnitOfWork();
-       
-        // GET: Student
+
+        // GET: Course
         public ActionResult Index()
         {
-            IEnumerable<Student> students = uow.StudentRepository.GetAll(); 
-            return View(students);
+            IEnumerable<Course> courses = uow.CourseRepository.GetAll();
+            return View(courses);
         }
 
-        // GET: Student/Details/5
+        // GET: Course/Details/5
         public ActionResult Details(string id)
         {
-            Student student = uow.StudentRepository.GetById(id);
-            return View(student);
+            Course course = uow.CourseRepository.GetById(id);
+            return View(course);
         }
 
-        // GET: Student/Create
+        // GET: Course/Create
         public ActionResult Create()
         {
-            Student student = new Student();
-            return View(student);
+            Course course = new Course();
+            return View(course);
         }
 
-        // POST: Student/Create
+        // POST: Course/Create
         [HttpPost]
-        public ActionResult Create(Student student)
+        public ActionResult Create(Course course)
         {
             try
             {
                 // TODO: Add insert logic here
-                uow.StudentRepository.Add(student);
-                uow.StudentRepository.Save();
+                uow.CourseRepository.Add(course);
+                uow.CourseRepository.Save();
                 return RedirectToAction("Index");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 if (e.GetType() != typeof(DbEntityValidationException))
                 {
@@ -61,31 +58,31 @@ namespace J_LearningSystem.Controllers
                         ModelState.AddModelError(string.Empty, "Some technical error happened.");
                     }
                 }
-                return View(student);
+                return View(course);
             }
         }
 
-        // GET: Student/Edit/5
+        // GET: Course/Edit/5
         public ActionResult Edit(string id)
         {
-            Student student = uow.StudentRepository.GetById(id);
-            return View(student);
+            Course course = uow.CourseRepository.GetById(id);
+            return View(course);
         }
 
-        // POST: Student/Edit/5
+        // POST: Course/Edit/5
         [HttpPost]
         public ActionResult Edit(string id, FormCollection collection)
         {
             try
             {
                 // TODO: Add update logic here
-                Student student = uow.StudentRepository.GetById(id);
-                UpdateModel(student);
+                Course course = uow.CourseRepository.GetById(id);
+                UpdateModel(course);
 
-                uow.StudentRepository.Save();
+                uow.CourseRepository.Save();
                 return RedirectToAction("Index");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 if (e.GetType() != typeof(DbEntityValidationException))
                 {
@@ -102,21 +99,21 @@ namespace J_LearningSystem.Controllers
             }
         }
 
-        // GET: Student/Delete/5
+        // GET: Course/Delete/5
         public ActionResult Delete(string id)
         {
-            return View(uow.StudentRepository.GetById(id));
+            return View(uow.CourseRepository.GetById(id));
         }
 
-        // POST: Student/Delete/5
+        // POST: Course/Delete/5
         [HttpPost]
-        public ActionResult Delete(string id,FormCollection collection)
+        public ActionResult Delete(string id, FormCollection collection)
         {
             try
             {
                 // TODO: Add delete logic here
-                uow.StudentRepository.Remove(uow.StudentRepository.GetById(id));
-                uow.StudentRepository.Save();
+                uow.CourseRepository.Remove(uow.CourseRepository.GetById(id));
+                uow.CourseRepository.Save();
                 return RedirectToAction("Index");
             }
             catch
