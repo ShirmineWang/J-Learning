@@ -46,8 +46,12 @@ namespace J_LearningSystem.Controllers
                 // TODO: Add insert logic here
                 //if (ModelState.IsValid)
                 //{
+                    Staff staff= uow.StaffRepository.GetById(course.StaffID);
+                    course.Staff = staff;
+                    staff.Courses.Add(course);
                     uow.CourseRepository.Add(course);
                     uow.CourseRepository.Save();
+                    uow.StaffRepository.Save();
                     return RedirectToAction("Index");
                // }
                 
@@ -109,10 +113,10 @@ namespace J_LearningSystem.Controllers
 
         private void PopulateStaffDropDownList(object selectedStaff = null)
         {
-            var staffsQuery = from d in uow.getSystemContext().Staffs
+            var staffQuery = from d in uow.getSystemContext().Staffs
                                    orderby d.Name
                                    select d;
-            ViewBag.staffID = new SelectList(staffsQuery, "MatricId", "Name", selectedStaff);
+            ViewBag.staffID = new SelectList(staffQuery,"MatricId","Name",selectedStaff);
         }
 
         // GET: Course/Delete/5

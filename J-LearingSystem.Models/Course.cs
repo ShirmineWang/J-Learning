@@ -13,6 +13,7 @@ namespace J_LearingSystem.Models
         public string CourseId { get; set; }
         [Required]
         public string CourseName { get; set; }
+        public string StaffID { get; set; }
         public virtual Staff Staff { get; set; }
         private List<Quiz> quizs = new List<Quiz>();
         public virtual List<Quiz> Quizs
