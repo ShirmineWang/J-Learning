@@ -135,6 +135,50 @@ namespace J_LearningSystem.Controllers
         }
 
         //
+        [AllowAnonymous]
+        public ActionResult RegisterStudent()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RegisterStudent(J_LearingSystem.Models.Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                //ApplicationUser user=null;
+                //var user = J_LearningSystem.BL.UserBL.Instance.CreateStudent();
+                return RedirectToAction("Index", "Home");
+
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult RegisterStaff()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RegisterStaff(J_LearingSystem.Models.Staff staff)
+        {
+            if (ModelState.IsValid)
+            {
+                //ApplicationUser user=null;
+                //var user = J_LearningSystem.BL.UserBL.Instance.CreateStudent();
+                return RedirectToAction("Index", "Home");
+
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View();
+        }
+
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
