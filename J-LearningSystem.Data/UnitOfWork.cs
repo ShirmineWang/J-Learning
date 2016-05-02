@@ -29,6 +29,11 @@ namespace J_LearningSystem.Data
             _db = new SystemContext();
         }
 
+        public SystemContext getSystemContext()
+        {
+            return _db;
+        }
+
         public BaseRepository<Student> StudentRepository
         {
             get

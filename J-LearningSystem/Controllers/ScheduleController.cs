@@ -9,48 +9,41 @@ using System.Data.Entity.Validation;
 
 namespace J_LearningSystem.Controllers
 {
-    public class CourseController : Controller
+    public class ScheduleController : Controller
     {
         UnitOfWork uow = UnitOfWorkHelper.GetUnitOfWork();
 
-        // GET: Course
+        // GET: Schedule
         public ActionResult Index()
         {
-            IEnumerable<Course> courses = uow.CourseRepository.GetAll();
-            return View(courses);
+            IEnumerable<Schedule> schedules = uow.ScheduleRepository.GetAll();
+            return View(schedules);
         }
 
-        // GET: Course/Details/5
+        // GET: Schedule/Details/5
         public ActionResult Details(string id)
         {
-            Course course = uow.CourseRepository.GetById(id);
-            return View(course);
+            Schedule schedule = uow.ScheduleRepository.GetById(id);
+            return View(schedule);
         }
 
-        // GET: Course/Create
+        // GET: Schedule/Create
         public ActionResult Create()
         {
-            /*
-            Course course = new Course();
-            */
-            PopulateStaffDropDownList();
-            return View();
+            Schedule schedule = new Schedule();
+            return View(schedule);
         }
 
-        // POST: Course/Create
+        // POST: Schedule/Create
         [HttpPost]
-        public ActionResult Create(Course course)
+        public ActionResult Create(Schedule schedule)
         {
             try
             {
                 // TODO: Add insert logic here
-                //if (ModelState.IsValid)
-                //{
-                    uow.CourseRepository.Add(course);
-                    uow.CourseRepository.Save();
-                    return RedirectToAction("Index");
-               // }
-                
+                uow.ScheduleRepository.Add(schedule);
+                uow.ScheduleRepository.Save();
+                return RedirectToAction("Index");
             }
             catch (Exception e)
             {
@@ -65,29 +58,28 @@ namespace J_LearningSystem.Controllers
                         ModelState.AddModelError(string.Empty, "Some technical error happened.");
                     }
                 }
-                PopulateStaffDropDownList(course.Staff.MatricId);
-                return View(course);
+                return View(schedule);
             }
         }
 
-        // GET: Course/Edit/5
+        // GET: Schedule/Edit/5
         public ActionResult Edit(string id)
         {
-            Course course = uow.CourseRepository.GetById(id);
-            return View(course);
+            Schedule schedule = uow.ScheduleRepository.GetById(id);
+            return View(schedule);
         }
 
-        // POST: Course/Edit/5
+        // POST: Schedule/Edit/5
         [HttpPost]
         public ActionResult Edit(string id, FormCollection collection)
         {
             try
             {
                 // TODO: Add update logic here
-                Course course = uow.CourseRepository.GetById(id);
-                UpdateModel(course);
+                Schedule schedule = uow.ScheduleRepository.GetById(id);
+                UpdateModel(schedule);
 
-                uow.CourseRepository.Save();
+                uow.ScheduleRepository.Save();
                 return RedirectToAction("Index");
             }
             catch (Exception e)
@@ -107,29 +99,21 @@ namespace J_LearningSystem.Controllers
             }
         }
 
-        private void PopulateStaffDropDownList(object selectedStaff = null)
-        {
-            var staffsQuery = from d in uow.getSystemContext().Staffs
-                                   orderby d.Name
-                                   select d;
-            ViewBag.staffID = new SelectList(staffsQuery, "MatricId", "Name", selectedStaff);
-        }
-
-        // GET: Course/Delete/5
+        // GET: Schedule/Delete/5
         public ActionResult Delete(string id)
         {
-            return View(uow.CourseRepository.GetById(id));
+            return View(uow.ScheduleRepository.GetById(id));
         }
 
-        // POST: Course/Delete/5
+        // POST: Schedule/Delete/5
         [HttpPost]
         public ActionResult Delete(string id, FormCollection collection)
         {
             try
             {
                 // TODO: Add delete logic here
-                uow.CourseRepository.Remove(uow.CourseRepository.GetById(id));
-                uow.CourseRepository.Save();
+                uow.ScheduleRepository.Remove(uow.ScheduleRepository.GetById(id));
+                uow.ScheduleRepository.Save();
                 return RedirectToAction("Index");
             }
             catch
