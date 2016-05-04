@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J-LearingSystem.Models", "J
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J-LearningSystem.BL", "J-LearningSystem.BL\J-LearningSystem.BL.csproj", "{FD321E84-C0E0-47EE-808B-663DBF43308F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J-Learning.Web", "J-Learning.Web\J-Learning.Web.csproj", "{D6488A2E-FEFB-4564-8E0C-1F2F99FAFA2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FD321E84-C0E0-47EE-808B-663DBF43308F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD321E84-C0E0-47EE-808B-663DBF43308F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD321E84-C0E0-47EE-808B-663DBF43308F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6488A2E-FEFB-4564-8E0C-1F2F99FAFA2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6488A2E-FEFB-4564-8E0C-1F2F99FAFA2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6488A2E-FEFB-4564-8E0C-1F2F99FAFA2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6488A2E-FEFB-4564-8E0C-1F2F99FAFA2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Security.Claims;
+using Microsoft.AspNet.Identity;
 
 namespace J_LearingSystem.Models
 {
@@ -16,5 +18,10 @@ namespace J_LearingSystem.Models
 
         public virtual ICollection<Topic> Topics { get; set; } = new HashSet<Topic>();
 
+
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<Person> manager) {
+            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            return userIdentity;
+        }
     }
 }

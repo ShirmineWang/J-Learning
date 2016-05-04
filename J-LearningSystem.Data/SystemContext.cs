@@ -39,5 +39,9 @@ namespace J_LearningSystem.Data
             base.OnModelCreating(modelBuilder);
         }
 
+        public static SystemContext Create() {
+            return new SystemContext();
+        }
+
     }
 }
