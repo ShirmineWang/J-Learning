@@ -7,8 +7,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace J_LearingSystem.Models
 {
-    public class Staff:Person
-    {
+    public class Staff : Person {
+
+        [Required]
+        public bool IsAdmin { get; set; }
+
         public virtual ICollection<Course> Courses { get; set; } = new HashSet<Course>();
     }
 }

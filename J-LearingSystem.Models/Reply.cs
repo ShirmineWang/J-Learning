@@ -9,9 +9,12 @@ namespace J_LearingSystem.Models
 {
     public class Reply : BaseEntity
     {
-        public string ReplyText { get; set; }
-        public DateTime ReplyTime { get; set; }
+        public string Text { get; set; }
+
+        public DateTime Time { get; set; }
+
         public virtual Person Person { get; set; }
+
         public virtual Topic Topic { get; set; }
     }
 }

@@ -13,5 +13,10 @@ namespace J_LearingSystem.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
+
+        public virtual ICollection<Reply> Replies { get; set; } = new HashSet<Reply>();
+
+        public virtual ICollection<Topic> Topics { get; set; } = new HashSet<Topic>();
+
     }
 }

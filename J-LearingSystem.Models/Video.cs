@@ -12,8 +12,6 @@ namespace J_LearingSystem.Models
         [Required]
         public string FileName { get; set; }
 
-        public virtual Staff Staff { get; set; }
-
         [Required]
         public DateTime Time { get; set; }
 
