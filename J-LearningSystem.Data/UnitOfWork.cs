@@ -13,10 +13,10 @@ namespace J_LearningSystem.Data
 
         private List<object> _list;
 
-        public UnitOfWork()
+        public UnitOfWork(SystemContext db)
         {
             _list = new List<object>();
-            _db = new SystemContext();
+            _db = db;
         }
 
         public BaseRepository<T> GetRepository<T>() where T : class, IBaseEntity {
