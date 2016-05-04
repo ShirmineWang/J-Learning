@@ -15,41 +15,9 @@ namespace J_LearingSystem.Models
         public string CourseName { get; set; }
         public string StaffID { get; set; }
         public virtual Staff Staff { get; set; }
-        private List<Quiz> quizs = new List<Quiz>();
-        public virtual List<Quiz> Quizs
-        {
-            get
-            {
-                return quizs;
-            }
-            set
-            {
-                quizs = value;
-            }
-        }
-        private List<Student> students = new List<Student>();
-        public virtual List<Student> Students
-        {
-            get
-            {
-                return students;
-            }
-            set
-            {
-                students = value;
-            }
-        }
-
-        private List<Schedule> schedules = new List<Schedule>();
-        public virtual List<Schedule> Schedules
-        {
-            get {
-                return schedules;
-            }
-            set {
-                schedules = value;
-            }
-        }
+        public virtual ICollection<Quiz> Quizs { get; set; } = new HashSet<Quiz>();
+        public virtual ICollection<Student> Students { get; set; } = new HashSet<Student>();
+        public virtual ICollection<Schedule> Schedules { get; set; } = new HashSet<Schedule>();
 //        public virtual Forum Forum { get; set; }
     }
 }

@@ -8,29 +8,7 @@ namespace J_LearingSystem.Models
 {
     public class Student:Person
     {
-        private List<Answer> answers;
-        public virtual List<Answer> Answers
-        {
-            get
-            {
-                return answers;
-            }
-            set
-            {
-                answers = value;
-            }
-        }
-        private List<Course> courses;
-        public virtual List<Course> Courses
-        {
-            get
-            {
-                return courses;
-            }
-            set
-            {
-                courses = value;
-            }
-        }
+        public virtual ICollection<Answer> Answers { get; set; } = new HashSet<Answer>();
+        public virtual ICollection<Course> Courses { get; set; } = new HashSet<Course>();
     }
 }

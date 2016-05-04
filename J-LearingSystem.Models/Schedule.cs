@@ -20,18 +20,6 @@ namespace J_LearingSystem.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime StopTime { get; set; }
-
-        private List<Course> courses = new List<Course>();
-        public virtual List<Course> Courses
-        {
-            get
-            {
-                return courses;
-            }
-            set
-            {
-                courses = value;
-            }
-        }
+        public virtual ICollection<Course> Courses { get; set; } = new HashSet<Course>();
     }
 }

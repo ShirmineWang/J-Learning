@@ -13,16 +13,6 @@ namespace J_LearingSystem.Models
         public string AnswerId { get; set; }
         public virtual QuestionOption QuestionOption { get; set; }
 
-        private List<Student> students = new List<Student>();
-        public virtual List<Student> Students {
-            get
-            {
-                return students;
-            }
-            set
-            {
-                students = value;
-            }
-        }
+        public virtual ICollection<Student> Students { get; set; } = new HashSet<Student>();
     }
 }

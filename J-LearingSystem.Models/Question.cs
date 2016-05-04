@@ -14,18 +14,6 @@ namespace J_LearingSystem.Models
         public string Text { get; set; }
         public char RightOption { get; set; }
         public virtual Quiz Quiz { get; set; }
-        private List<QuestionOption> questionOptions = new List<QuestionOption>();
-        public virtual List<QuestionOption> QuestionOptions
-        {
-            get
-            {
-                return questionOptions;
-            }
-            set
-            {
-                questionOptions = value;
-            }
-        }
-
+        public virtual ICollection<QuestionOption> QuestionOptions { get; set; } = new HashSet<QuestionOption>();
     }
 }

@@ -9,17 +9,6 @@ namespace J_LearingSystem.Models
 {
     public class Staff:Person
     {
-        private List<Course> courses = new List<Course>();
-        public virtual List<Course> Courses
-        {
-            get
-            {
-                return courses;
-            }
-            set
-            {
-                courses = value;
-            }
-        }
+        public virtual ICollection<Course> Courses { get; set; } = new HashSet<Course>();
     }
 }

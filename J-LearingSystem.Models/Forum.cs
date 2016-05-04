@@ -11,21 +11,14 @@ namespace J_LearingSystem.Models
     {
         [Key][Required]
         public string ForumId { get; set; }
+
         [Required]
         public DateTime OpenTime { get; set; }
+
         public DateTime ExpiryTime { get; set; }
+
         public virtual Course Course { get; set; }
-        private List<Topic> topics = new List<Topic>();
-        public virtual List<Topic> Topics
-        {
-            get
-            {
-                return topics;
-            }
-            set
-            {
-                topics = value;
-            }
-        }
+  
+        public virtual ICollection<Topic> Topics { get; set; } = new HashSet<Topic>();
     }
 }
