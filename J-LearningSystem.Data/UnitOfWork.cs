@@ -7,168 +7,60 @@ using J_LearingSystem.Models;
 
 namespace J_LearningSystem.Data
 {
-     public class UnitOfWork
+     public class UnitOfWork : IDisposable
     {
-        SystemContext _db;
+        private SystemContext _db;
 
-        BaseRepository<Student> studentRepository { get; set; }
-        BaseRepository<Staff> staffRepository { get; set; }
-        BaseRepository<Schedule> scheduleRepository { get; set; }
-        BaseRepository<Course> courseRepository { get; set; }
-        BaseRepository<Quiz> quizRepository { get; set; }
-        BaseRepository<Question> questionRepository { get; set; }
-        BaseRepository<QuestionOption> questionOptionRepository { get; set; }
-        BaseRepository<Answer> answerRepository { get; set; }
-        BaseRepository<Forum> forumRepository { get; set; }
-        BaseRepository<Topic> topicRepository { get; set; }
-        BaseRepository<Reply> replyRepository { get; set; }
-        BaseRepository<Video> videoRepository { get; set; }
+        private List<object> _list;
 
         public UnitOfWork()
         {
+            _list = new List<object>();
             _db = new SystemContext();
         }
 
-        public SystemContext getSystemContext()
-        {
-            return _db;
+        public BaseRepository<T> GetRepository<T>() where T : BaseEntity {
+            var repo =  _list.OfType<BaseRepository<T>>().FirstOrDefault();
+            if (repo == null) {
+                repo = new BaseRepository<T>(_db);
+                _list.Add(repo);
+            }
+            return repo;
         }
 
-        public BaseRepository<Student> StudentRepository
-        {
-            get
-            {
-                if (studentRepository == null)
-                    studentRepository = new BaseRepository<Student>(_db);
+        #region IDisposable Support
+        private bool disposedValue = false; // To detect redundant calls
 
-                return studentRepository;
+        protected virtual void Dispose(bool disposing) {
+            if (!disposedValue) {
+                if (disposing) {
+                    _list.Clear();
+                    _list = null;
+                    _db.Dispose();
+                }
+
+                // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
+                // TODO: set large fields to null.
+
+                disposedValue = true;
             }
         }
 
-        public BaseRepository<Staff> StaffRepository
-        {
-            get
-            {
-                if (staffRepository == null)
-                    staffRepository = new BaseRepository<Staff>(_db);
+        // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
+        // ~UnitOfWork() {
+        //   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+        //   Dispose(false);
+        // }
 
-                return staffRepository;
-            }
+        // This code added to correctly implement the disposable pattern.
+        public void Dispose() {
+            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+            Dispose(true);
+            // TODO: uncomment the following line if the finalizer is overridden above.
+            // GC.SuppressFinalize(this);
         }
+        #endregion
 
-        public BaseRepository<Schedule> ScheduleRepository
-        {
-            get
-            {
-                if (scheduleRepository == null)
-                    scheduleRepository = new BaseRepository<Schedule>(_db);
 
-                return scheduleRepository;
-            }
-        }
-
-        public BaseRepository<Course> CourseRepository
-        {
-            get
-            {
-                if (courseRepository == null)
-                    courseRepository = new BaseRepository<Course>(_db);
-
-                return courseRepository;
-            }
-        }
-
-        public BaseRepository<Quiz> QuizRepository
-        {
-            get
-            {
-                if (quizRepository == null)
-                    quizRepository = new BaseRepository<Quiz>(_db);
-
-                return quizRepository;
-            }
-        }
-
-        public BaseRepository<Question> QuestionRepository
-        {
-            get
-            {
-                if (questionRepository == null)
-                    questionRepository = new BaseRepository<Question>(_db);
-
-                return questionRepository;
-            }
-        }
-
-        public BaseRepository<QuestionOption> QuestionOptionRepository
-        {
-            get
-            {
-                if (questionOptionRepository == null)
-                    questionOptionRepository = new BaseRepository<QuestionOption>(_db);
-
-                return questionOptionRepository;
-            }
-        }
-
-        public BaseRepository<Answer> AnswerRepository
-        {
-            get
-            {
-                if (answerRepository == null)
-                    answerRepository = new BaseRepository<Answer>(_db);
-
-                return answerRepository;
-            }
-        }
-
-        public BaseRepository<Forum> ForumRepository
-        {
-            get
-            {
-                if (forumRepository == null)
-                    forumRepository = new BaseRepository<Forum>(_db);
-
-                return forumRepository;
-            }
-        }
-
-        public BaseRepository<Topic> TopicRepository
-        {
-            get
-            {
-                if (topicRepository == null)
-                    topicRepository = new BaseRepository<Topic>(_db);
-
-                return topicRepository;
-            }
-        }
-
-        public BaseRepository<Reply> ReplyRepository
-        {
-            get
-            {
-                if (replyRepository == null)
-                    replyRepository = new BaseRepository<Reply>(_db);
-
-                return replyRepository;
-            }
-        }
-
-        public BaseRepository<Video> VideoRepository
-        {
-            get
-            {
-                if (videoRepository == null)
-                    videoRepository = new BaseRepository<Video>(_db);
-
-                return videoRepository;
-            }
-        }
-
-        public void Dispose()
-        {
-            _db.Dispose();
-        }
     }
 }

@@ -13,9 +13,9 @@ namespace J_LearningSystem.Data
         public SystemContext()
             :base()
         {
+
         }
 
-        public DbSet<Answer> Answers { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Forum> Forums { get; set; }
         public DbSet<Person> Persons { get; set; }
@@ -29,7 +29,6 @@ namespace J_LearningSystem.Data
         public DbSet<Topic> Topics { get; set; }
         public DbSet<Video> Videos { get; set; }
 
-        /*
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
@@ -38,6 +37,6 @@ namespace J_LearningSystem.Data
 
             base.OnModelCreating(modelBuilder);
         }
-        */
+
     }
 }

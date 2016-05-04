@@ -1,4 +1,5 @@
-﻿using System;
+﻿using J_LearingSystem.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace J_LearningSystem.Data
 {
-    public interface IRepository<T> where T : class {
+    public interface IRepository<T> where T : BaseEntity {
         void Add(T entity);
         void Remove(T entity);
         T GetById(string id);
         IQueryable<T> GetAll();
-
         void Save();
     }
 
-    public class BaseRepository<T> : IRepository<T> where T : class {
-        protected SystemContext _db = null;
+    public class BaseRepository<T> : IRepository<T> where T : BaseEntity {
+        protected SystemContext _db;
 
         public BaseRepository(SystemContext db)
         {
