@@ -13,7 +13,6 @@ namespace J_LearingSystem.Models
         string Id { get; set; }
     }
 
-    [NotMapped]
     public abstract class BaseEntity : IBaseEntity {
 
         [Key]
@@ -21,7 +20,7 @@ namespace J_LearingSystem.Models
 
         public BaseEntity()
         {
-            Id = Guid.NewGuid().ToString("N");
+            Id = Guid.NewGuid().ToString("N"); // 128 bit
         }
     }
 }

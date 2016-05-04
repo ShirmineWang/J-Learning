@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using J_Learning.Web.Models;
+using J_LearningSystem.BL;
 
 namespace J_Learning.Web.Controllers
 {

@@ -34,7 +34,7 @@ namespace J_LearningSystem.Data
 
         public T GetById(string id)
         {
-            return _db.Set<T>().Find(id);
+            return _db.Set<T>().SingleOrDefault(x => x.Id == id);
         }
 
         public IQueryable<T> GetAll()

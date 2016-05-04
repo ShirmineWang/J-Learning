@@ -12,7 +12,7 @@ namespace J_LearningSystem.Data
     public class SystemContext : IdentityDbContext
     {
         public SystemContext()
-            :base()
+            :base("JLearningDb")
         {
 
         }
@@ -35,6 +35,7 @@ namespace J_LearningSystem.Data
 
             modelBuilder.Entity<Staff>().ToTable("Staffs");
             modelBuilder.Entity<Student>().ToTable("Students");
+            modelBuilder.Entity<Forum>().ToTable("Forums");
 
             base.OnModelCreating(modelBuilder);
         }
