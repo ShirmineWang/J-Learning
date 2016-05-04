@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J-LearningSystem", "J-LearningSystem\J-LearningSystem.csproj", "{A905022F-D573-4799-A037-71F6D4D0206F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J-LearningSystem.Data", "J-LearningSystem.Data\J-LearningSystem.Data.csproj", "{F5B3FF39-5DB0-4629-8C3C-6F94C023047F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J-LearingSystem.Models", "J-LearingSystem.Models\J-LearingSystem.Models.csproj", "{56157A15-0208-472B-B538-68F91E35D316}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A905022F-D573-4799-A037-71F6D4D0206F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A905022F-D573-4799-A037-71F6D4D0206F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A905022F-D573-4799-A037-71F6D4D0206F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A905022F-D573-4799-A037-71F6D4D0206F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5B3FF39-5DB0-4629-8C3C-6F94C023047F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5B3FF39-5DB0-4629-8C3C-6F94C023047F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5B3FF39-5DB0-4629-8C3C-6F94C023047F}.Release|Any CPU.ActiveCfg = Release|Any CPU

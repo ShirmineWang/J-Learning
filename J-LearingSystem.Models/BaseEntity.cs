@@ -8,9 +8,14 @@ using System.Threading.Tasks;
 
 namespace J_LearingSystem.Models
 {
+
+    public interface IBaseEntity {
+        string Id { get; set; }
+    }
+
     [NotMapped]
-    public abstract class BaseEntity
-    {
+    public abstract class BaseEntity : IBaseEntity {
+
         [Key]
         public string Id { get; set; }
 

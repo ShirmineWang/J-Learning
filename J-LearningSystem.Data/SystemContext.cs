@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using J_LearingSystem.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace J_LearningSystem.Data
 {
-    public class SystemContext : DbContext
+    public class SystemContext : IdentityDbContext
     {
         public SystemContext()
             :base()

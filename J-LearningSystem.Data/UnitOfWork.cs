@@ -19,7 +19,7 @@ namespace J_LearningSystem.Data
             _db = new SystemContext();
         }
 
-        public BaseRepository<T> GetRepository<T>() where T : BaseEntity {
+        public BaseRepository<T> GetRepository<T>() where T : class, IBaseEntity {
             var repo =  _list.OfType<BaseRepository<T>>().FirstOrDefault();
             if (repo == null) {
                 repo = new BaseRepository<T>(_db);

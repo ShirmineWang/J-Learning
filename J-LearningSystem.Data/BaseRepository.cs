@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace J_LearningSystem.Data
 {
-    public interface IRepository<T> where T : BaseEntity {
+    public interface IRepository<T> where T : class, IBaseEntity {
         void Add(T entity);
         void Remove(T entity);
         T GetById(string id);
@@ -15,7 +15,7 @@ namespace J_LearningSystem.Data
         void Save();
     }
 
-    public class BaseRepository<T> : IRepository<T> where T : BaseEntity {
+    public class BaseRepository<T> : IRepository<T> where T : class, IBaseEntity {
         protected SystemContext _db;
 
         public BaseRepository(SystemContext db)
