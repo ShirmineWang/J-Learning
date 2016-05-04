@@ -8,7 +8,7 @@ namespace J_LearingSystem.Models
 {
     public class Student:Person
     {
-        public virtual ICollection<Answer> Answers { get; set; } = new HashSet<Answer>();
+        public virtual ICollection<QuestionOption> Answers { get; set; } = new HashSet<QuestionOption>();
         public virtual ICollection<Course> Courses { get; set; } = new HashSet<Course>();
     }
 }

@@ -7,10 +7,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace J_LearingSystem.Models
 {
-    public abstract class Person
+    public abstract class Person : BaseEntity
     {
-        [Key][Required]
-        public string MatricId { get; set; }
+        [EmailAddress]
+        public string Email { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
     }

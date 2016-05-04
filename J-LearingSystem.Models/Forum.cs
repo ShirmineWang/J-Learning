@@ -7,11 +7,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace J_LearingSystem.Models
 {
-    public class Forum
+    public class Forum : BaseEntity
     {
-        [Key][Required]
-        public string ForumId { get; set; }
-
         [Required]
         public DateTime OpenTime { get; set; }
 

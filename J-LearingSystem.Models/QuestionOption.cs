@@ -7,12 +7,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace J_LearingSystem.Models
 {
-    public class QuestionOption
+    public class QuestionOption : BaseEntity
     {
-        [Key][Required]
-        public string QuestionOptionId { get; set; }
-        public string OptionText { get; set; }
-        public char Option { get; set; }
+        public string Text { get; set; }
         public virtual Question Question { get; set; }
+
+        public virtual ICollection<Student> Students { get; set; } = new HashSet<Student>();
+
     }
 }

@@ -1,28 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="J_LearingSystem.Models.Video">
-    <Position X="10.5" Y="3" Width="1.5" />
+    <Position X="11.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAKAAAAAAAAAAAABAAQA=</HashCode>
       <FileName>Video.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Course" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="J_LearingSystem.Models.Answer">
-    <Position X="10.25" Y="5.75" Width="1.5" />
+  <Class Name="J_LearingSystem.Models.Course">
+    <Position X="9.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABIAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Answer.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="J_LearingSystem.Models.Course" Collapsed="true">
-    <Position X="8.5" Y="7.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAKEAAAAAgAAAAAAAAAAAAAAAGAAAABAAAAAAgACAAA=</HashCode>
+      <HashCode>AAKEAAAAAAAAAAAgAAAAAAAAAGAAAAAAAAAAAgAAAAg=</HashCode>
       <FileName>Course.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Schedule" />
+      <Property Name="Staff" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Quizs" />
+      <Property Name="Videos" />
+      <Property Name="Students" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="J_LearingSystem.Models.Forum">
-    <Position X="1.75" Y="5" Width="1.5" />
+    <Position X="2.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEIAAAAAAAAIAAAAAAAAAAAAAAAAAAICAAAAA=</HashCode>
       <FileName>Forum.cs</FileName>
@@ -32,66 +37,104 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="J_LearingSystem.Models.Person">
-    <Position X="1.75" Y="0.5" Width="1.5" />
+    <Position X="2.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="J_LearingSystem.Models.Question" Collapsed="true">
-    <Position X="10.5" Y="0.5" Width="1.5" />
+  <Class Name="J_LearingSystem.Models.Question">
+    <Position X="9.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAAgAEAAAAAAAAAAAACAQAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAACgQAAAA=</HashCode>
       <FileName>Question.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CorrectOption" />
+      <Property Name="Quiz" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="QuestionOptions" />
+    </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="J_LearingSystem.Models.QuestionOption" Collapsed="true">
-    <Position X="7" Y="7" Width="1.5" />
+  <Class Name="J_LearingSystem.Models.QuestionOption">
+    <Position X="5.75" Y="6.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAASAAAAAAAAAAEAAAAIAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAKAAAAAA=</HashCode>
       <FileName>QuestionOption.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Question" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="J_LearingSystem.Models.Quiz" Collapsed="true">
-    <Position X="3.75" Y="7.5" Width="1.5" />
+  <Class Name="J_LearingSystem.Models.Quiz">
+    <Position X="9.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAIAQAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAIAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Quiz.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Course" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Questions" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="J_LearingSystem.Models.Reply">
-    <Position X="8.5" Y="5" Width="1.5" />
+    <Position X="5" Y="4.25" Width="1.5" />
+    <AssociationLine Name="Person" Type="J_LearingSystem.Models.Person" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.219" Y="4.25" />
+        <Point X="5.219" Y="3.875" />
+        <Point X="3.438" Y="3.875" />
+        <Point X="3.438" Y="2.69" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.516" Y="0.257" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>CIAAAAAAAAAAAAAAAAAAABAEAAAAAAAAAAAAACAAAAA=</HashCode>
       <FileName>Reply.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Person" />
+      <Property Name="Topic" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="J_LearingSystem.Models.Schedule" Collapsed="true">
-    <Position X="10.5" Y="1.5" Width="1.5" />
+  <Class Name="J_LearingSystem.Models.Schedule">
+    <Position X="11.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAAAAAAIIAAAAAAAEAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAIIAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Schedule.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Courses" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="J_LearingSystem.Models.Staff">
-    <Position X="1" Y="2.5" Width="1.5" />
+    <Position X="6" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Staff.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Courses" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="J_LearingSystem.Models.Student">
-    <Position X="3" Y="2.5" Width="1.5" />
+    <Position X="6" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAUAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAABAAAAA=</HashCode>
       <FileName>Student.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Courses" />
+      <Property Name="Answers" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="J_LearingSystem.Models.Topic">
-    <Position X="5.25" Y="5" Width="1.5" />
+    <Position X="2.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAACAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAgAIAAg=</HashCode>
       <FileName>Topic.cs</FileName>

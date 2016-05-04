@@ -7,15 +7,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace J_LearingSystem.Models
 {
-     public class Video
+     public class Video : BaseEntity
     {
-        [Key][Required]
-        public string VideoId { get; set; }
         [Required]
         public string FileName { get; set; }
+
         public virtual Staff Staff { get; set; }
+
         [Required]
         public DateTime Time { get; set; }
+
         [Required]
         public virtual Course Course { get; set; }
     }

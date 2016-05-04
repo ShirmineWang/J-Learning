@@ -7,10 +7,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace J_LearingSystem.Models
 {
-    public class Reply
+    public class Reply : BaseEntity
     {
-        [Key][Required]
-        public string ReplyId { get; set; }
         public string ReplyText { get; set; }
         public DateTime ReplyTime { get; set; }
         public virtual Person Person { get; set; }

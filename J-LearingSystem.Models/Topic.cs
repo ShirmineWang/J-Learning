@@ -7,15 +7,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace J_LearingSystem.Models
 {
-    public class Topic
+    public class Topic : BaseEntity
     {
-        [Key]
-        [Required]
-        public string TopicId { get; set; }
 
-        public string TopicTitle { get; set; }
+        public string Title { get; set; }
 
-        public DateTime TopicTime { get; set; }
+        public DateTime Time { get; set; }
 
         public virtual Forum Forum{ get; set; }
 
