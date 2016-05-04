@@ -29,8 +29,8 @@
     <ShowAsCollectionAssociation>
       <Property Name="Quizs" />
       <Property Name="Videos" />
-      <Property Name="Students" />
       <Property Name="Forums" />
+      <Property Name="Students" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="J_LearingSystem.Models.Forum">
@@ -56,13 +56,14 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAAAAAACAAAAACAIAAA=</HashCode>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAQAAAAAAAAAAAAAACAIAAA=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Replies" />
       <Property Name="Topics" />
     </ShowAsCollectionAssociation>
+    <Lollipop Position="0.1" />
   </Class>
   <Class Name="J_LearingSystem.Models.Question">
     <Position X="6.25" Y="7.75" Width="1.5" />
@@ -71,7 +72,6 @@
       <FileName>Question.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="CorrectOption" />
       <Property Name="Quiz" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
@@ -106,6 +106,15 @@
   </Class>
   <Class Name="J_LearingSystem.Models.Reply">
     <Position X="0.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Person" Type="J_LearingSystem.Models.Person" FixedToPoint="true">
+      <Path>
+        <Point X="1.688" Y="1.885" />
+        <Point X="1.688" Y="2.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.365" Y="0.302" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCAAAQA=</HashCode>
       <FileName>Reply.cs</FileName>
@@ -130,13 +139,11 @@
     <InheritanceLine Type="J_LearingSystem.Models.Person" FixedFromPoint="true">
       <Path>
         <Point X="2" Y="3.625" />
-        <Point X="2.375" Y="3.625" />
-        <Point X="2.375" Y="4.162" />
-        <Point X="3" Y="4.162" />
+        <Point X="3" Y="3.625" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Staff.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
