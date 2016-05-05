@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201605041232285_DeleteIsAdmin.Designer.cs">
       <DependentUpon>201605041232285_DeleteIsAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605050832566_FixValidationForCourse.cs" />
+    <Compile Include="Migrations\201605050832566_FixValidationForCourse.Designer.cs">
+      <DependentUpon>201605050832566_FixValidationForCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SystemContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605041232285_DeleteIsAdmin.resx">
       <DependentUpon>201605041232285_DeleteIsAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605050832566_FixValidationForCourse.resx">
+      <DependentUpon>201605050832566_FixValidationForCourse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
