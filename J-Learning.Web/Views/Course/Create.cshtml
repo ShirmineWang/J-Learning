@@ -33,7 +33,7 @@
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Staff.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label for="Staff.Id" class = "control-label col-md-2">Instructor</label>
             <div class="col-md-10">
                 @Html.DropDownList("Staff.Id", ViewBag.StaffSelectList as IEnumerable<SelectListItem>,  new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Staff.Id, "", new { @class = "text-danger" })

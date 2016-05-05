@@ -70,6 +70,14 @@
     <Compile Include="Migrations\201605050832566_FixValidationForCourse.Designer.cs">
       <DependentUpon>201605050832566_FixValidationForCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605051248371_addTimeToQuiz.cs" />
+    <Compile Include="Migrations\201605051248371_addTimeToQuiz.Designer.cs">
+      <DependentUpon>201605051248371_addTimeToQuiz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605051352402_DeleteForum.cs" />
+    <Compile Include="Migrations\201605051352402_DeleteForum.Designer.cs">
+      <DependentUpon>201605051352402_DeleteForum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SystemContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +102,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605050832566_FixValidationForCourse.resx">
       <DependentUpon>201605050832566_FixValidationForCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605051248371_addTimeToQuiz.resx">
+      <DependentUpon>201605051248371_addTimeToQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605051352402_DeleteForum.resx">
+      <DependentUpon>201605051352402_DeleteForum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

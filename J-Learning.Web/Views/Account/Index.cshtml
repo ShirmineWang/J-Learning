@@ -1,4 +1,5 @@
-﻿@model J_LearingSystem.Models.Person
+﻿@using J_LearingSystem.Models
+@model Person
 
 @{
     ViewBag.Title = "Account";
@@ -6,3 +7,48 @@
 
 <h2>@ViewBag.Title</h2>
 
+@if(User.IsInRole("Admin"))
+{
+    <a href="@Url.Action("Index","Schedule")" class="btn btn-default">Schedules</a>
+    <a href="@Url.Action("Index","Person", new { t = "Staff" })" class="btn btn-default">Staffs</a>
+    <a href="@Url.Action("Index","Person", new { t = "Student" })" class="btn btn-default">Students</a>
+
+}
+else if (User.IsInRole("Staff")) {
+    <p><strong>Courses</strong></p>
+    <ul>
+        @foreach (var course in (Model as Staff).Courses) {
+            <li>
+                <a href="@Url.Action("Details", "Course", new { id = course.Id })">@course.Name</a>
+            </li>
+        }
+    </ul>
+
+    <p><strong>Last 10 Quizzes</strong></p>
+    <ul>
+        @foreach (var quiz in (Model as Staff).Quizzes) {
+            <li>
+                <a href="@Url.Action("Details", "Quiz", new { id = quiz.Id, t = "Answer" })">Quiz For @quiz.Course.Name</a>
+            </li>
+        }
+    </ul>
+}
+else if (User.IsInRole("Student")) {
+    <p><strong>Enrolled Courses</strong></p>
+    <ul>
+        @foreach (var course in (Model as Student).EnrolledCourses) {
+            <li>
+                <a href="@Url.Action("Details", "Course", new { id = course.Id })">@course.Name</a>
+            </li>
+        }
+    </ul>
+
+    <p><strong>Quizzes</strong></p>
+    <ul>
+        @foreach (var quiz in (Model as Student).OpenQuizzes) {
+            <li>
+                <a href="@Url.Action("Details", "Quiz", new { id = quiz.Id, t = "Answer" })">Quiz For @quiz.Course.Name</a>
+            </li>
+        }
+    </ul>
+}

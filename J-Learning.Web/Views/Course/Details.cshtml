@@ -1,0 +1,131 @@
+﻿@model J_LearingSystem.Models.Course
+
+@{
+    ViewBag.Title = "Course Details";
+}
+
+<div class="row top-toolbar">
+    <div class="col-sm-6">
+        <h4>@ViewBag.Title</h4>
+    </div>
+    <div class="col-sm-6 text-right">
+        <div class="btn-group">
+            <a href="@Url.Action("Details", "Schedule", new { id = Model.Schedule.Id})" class="btn btn-default">
+                <span class="glyphicon glyphicon-arrow-left"></span> Back
+            </a>
+        </div>
+        <div class="btn-group">
+            <a href="@Url.Action("Edit", new { id = Model.Id })" class="btn btn-warning">
+                <span class="glyphicon glyphicon-edit"></span>
+            </a>
+            <a href="@Url.Action("Delete", new { id = Model.Id })" class="btn btn-danger">
+                <span class="glyphicon glyphicon-trash"></span>
+            </a>
+        </div>
+    </div>
+</div>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Model.Number
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Model.Name
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Staff)
+        </dt>
+
+        <dd>
+            @Model.Staff.Name
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Schedule)
+        </dt>
+
+        <dd>
+            @Model.Schedule.StartTime.ToShortDateString() - @Model.Schedule.StopTime.ToShortDateString()
+        </dd>
+
+    </dl>
+</div>
+
+@if (User.IsInRole("Staff")) {
+    <div class="row top-toolbar">
+        <div class="col-sm-6">
+            <h4>Students</h4>
+        </div>
+        <div class="col-sm-6 text-right">
+            <div class="btn-group">
+                <a href="@Url.Action("Assign", "Person", new { courseId = Model.Id })" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-plus"></span> Enroll Student
+                </a>
+            </div>
+        </div>
+    </div>
+    //Html.RenderPartial("~/Views/Person/_PartialStudentList.cshtml", Model.Students);
+}
+
+<div class="row top-toolbar">
+    <div class="col-sm-6">
+        <h4>Topics</h4>
+    </div>
+    <div class="col-sm-6 text-right">
+        <div class="btn-group">
+            <a href="@Url.Action("Create", "Topic", new { courseId = Model.Id })" class="btn btn-primary">
+                <span class="glyphicon glyphicon-plus"></span> New Topic
+            </a>
+        </div>
+    </div>
+    @{
+        //Html.RenderPartial("~/Views/Topic/_PartialTopicList.cshtml", Model.Topics);
+    }
+</div>
+
+<div class="row top-toolbar">
+    <div class="col-sm-6">
+        <h4>Quizzes</h4>
+    </div>
+    <div class="col-sm-6 text-right">
+@if (User.IsInRole("Staff")) {
+        <div class="btn-group">
+            <a href="@Url.Action("Create", "Quiz", new { courseId = Model.Id })" class="btn btn-primary">
+                <span class="glyphicon glyphicon-plus"></span> New Quiz
+            </a>
+        </div>
+}
+    </div>
+    @{
+        //Html.RenderPartial("~/Views/Quiz/_PartialTopicList.cshtml", Model.Quizs);
+    }
+</div>
+
+<div class="row top-toolbar">
+    <div class="col-sm-6">
+        <h4>Videos</h4>
+    </div>
+    <div class="col-sm-6 text-right">
+        @if (User.IsInRole("Staff")) {
+            <div class="btn-group">
+                <a href="@Url.Action("Create", "Video", new { courseId = Model.Id })" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-plus"></span> New Video
+                </a>
+            </div>
+        }
+    </div>
+    @{
+        //Html.RenderPartial("~/Views/Video/_PartialTopicList.cshtml", Model.Videos);
+    }
+</div>

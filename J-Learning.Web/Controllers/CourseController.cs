@@ -10,8 +10,7 @@ namespace J_Learning.Web.Controllers
 {
     public class CourseController : BaseController
     {
-
-
+        
         public ActionResult Index()
         {
             var list = UnitOfWork.GetRepository<Course>().GetAll();

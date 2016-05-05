@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace J_LearingSystem.Models
 {
@@ -26,10 +27,18 @@ namespace J_LearingSystem.Models
 
         public virtual ICollection<Video> Videos { get; set; } = new HashSet<Video>();
 
-        public virtual ICollection<Forum> Forums { get; set; } = new HashSet<Forum>();
+        public virtual ICollection<Topic> Topics { get; set; } = new HashSet<Topic>();
 
         public virtual ICollection<Student> Students { get; set; } = new HashSet<Student>();
        
 
+        [NotMapped]
+        public bool IsInCurrentSchedule
+        {
+            get
+            {
+                return (Schedule.StartTime <= DateTime.Now && Schedule.StopTime >= DateTime.Now);
+            }
+        }
     }
 }

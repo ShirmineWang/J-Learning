@@ -1,0 +1,62 @@
+﻿@model J_LearingSystem.Models.Schedule
+
+@{
+    ViewBag.Title = "Schedule Details";
+}
+
+<div class="row top-toolbar">
+    <div class="col-sm-6">
+        <h4>@ViewBag.Title</h4>
+    </div>
+    <div class="col-sm-6 text-right">
+        <div class="btn-group">
+            <a href="@Url.Action("Index", "Schedule")" class="btn btn-default">
+                <span class="glyphicon glyphicon-arrow-left"></span> Back
+            </a>
+        </div>
+        <div class="btn-group">
+            <a href="@Url.Action("Edit", "Schedule", new { id = Model.Id })" class="btn btn-warning">
+                <span class="glyphicon glyphicon-edit"></span>
+            </a>
+            <a href="@Url.Action("Delete", "Schedule", new { id = Model.Id })" class="btn btn-danger">
+                <span class="glyphicon glyphicon-trash"></span>
+            </a>
+        </div>
+    </div>
+</div>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+
+        <dd>
+            @Model.StartTime.ToShortDateString()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StopTime)
+        </dt>
+
+        <dd>
+            @Model.StopTime.ToShortDateString()
+        </dd>
+
+    </dl>
+</div>
+<div class="row top-toolbar">
+    <div class="col-sm-6">
+        <h4>Courses</h4>
+    </div>
+    <div class="col-sm-6 text-right">
+        <div class="btn-group">
+            <a href="@Url.Action("Create", "Course", new { scheduleId = Model.Id })" class="btn btn-primary">
+                <span class="glyphicon glyphicon-plus"></span> Create Course
+            </a>
+        </div>
+    </div>
+</div>
+@{ 
+     Html.RenderPartial("~/Views/Course/_PartialCoursesList.cshtml", Model.Courses);
+}

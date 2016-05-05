@@ -19,7 +19,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAgAEAAAAQAAGAAAAAAAAAAAgAAAAg=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAgAEAAAAQAAGAAAAAAAAAAACAAAEg=</HashCode>
       <FileName>Course.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -29,20 +29,7 @@
     <ShowAsCollectionAssociation>
       <Property Name="Quizs" />
       <Property Name="Videos" />
-      <Property Name="Forums" />
       <Property Name="Students" />
-    </ShowAsCollectionAssociation>
-  </Class>
-  <Class Name="J_LearingSystem.Models.Forum">
-    <Position X="6.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAIAAAAAAAAAAAAAAAAAAICAAAAA=</HashCode>
-      <FileName>Forum.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Course" />
-    </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
       <Property Name="Topics" />
     </ShowAsCollectionAssociation>
   </Class>
@@ -52,7 +39,7 @@
       <Path>
         <Point X="2" Y="3.312" />
         <Point X="4.188" Y="3.312" />
-        <Point X="4.188" Y="1.885" />
+        <Point X="4.188" Y="2.318" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -66,7 +53,7 @@
     <Lollipop Position="0.1" />
   </Class>
   <Class Name="J_LearingSystem.Models.Question">
-    <Position X="6.25" Y="7.75" Width="1.5" />
+    <Position X="6.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAACgQAAAA=</HashCode>
       <FileName>Question.cs</FileName>
@@ -79,7 +66,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="J_LearingSystem.Models.QuestionOption">
-    <Position X="3" Y="7.75" Width="1.75" />
+    <Position X="3" Y="8.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
       <FileName>QuestionOption.cs</FileName>
@@ -92,9 +79,9 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="J_LearingSystem.Models.Quiz">
-    <Position X="6.25" Y="6" Width="1.5" />
+    <Position X="6.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAQIAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Quiz.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -139,11 +126,13 @@
     <InheritanceLine Type="J_LearingSystem.Models.Person" FixedFromPoint="true">
       <Path>
         <Point X="2" Y="3.625" />
-        <Point X="3" Y="3.625" />
+        <Point X="2.375" Y="3.625" />
+        <Point X="2.375" Y="4.162" />
+        <Point X="3" Y="4.162" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Staff.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -161,7 +150,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAIAAAAgAAAAAAAAAAAAAQAAAABAAAAA=</HashCode>
       <FileName>Student.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -173,18 +162,18 @@
     <Position X="3.25" Y="0.5" Width="1.5" />
     <AssociationLine Name="Person" Type="J_LearingSystem.Models.Person" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="3.812" Y="1.885" />
+        <Point X="3.812" Y="2.318" />
         <Point X="3.812" Y="3.125" />
         <Point X="2" Y="3.125" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AIAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAgAIAQA=</HashCode>
+      <HashCode>AIAAAAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAIAQA=</HashCode>
       <FileName>Topic.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Forum" />
       <Property Name="Person" />
+      <Property Name="Course" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Replies" />

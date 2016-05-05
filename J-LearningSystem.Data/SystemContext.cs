@@ -18,7 +18,6 @@ namespace J_LearningSystem.Data
         }
 
         public DbSet<Course> Courses { get; set; }
-        public DbSet<Forum> Forums { get; set; }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionOption> QuestionOptions { get; set; }
@@ -35,7 +34,6 @@ namespace J_LearningSystem.Data
 
             modelBuilder.Entity<Staff>().ToTable("Staffs");
             modelBuilder.Entity<Student>().ToTable("Students");
-            modelBuilder.Entity<Forum>().ToTable("Forums");
 
             base.OnModelCreating(modelBuilder);
         }
