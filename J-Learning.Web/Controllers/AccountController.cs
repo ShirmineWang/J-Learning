@@ -54,6 +54,11 @@ namespace J_Learning.Web.Controllers
             }
         }
 
+        [Authorize]
+        public ActionResult Index() {
+            return View();
+        }
+
         //
         // GET: /Account/Login
         [AllowAnonymous]
