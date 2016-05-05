@@ -18,7 +18,7 @@ namespace J_LearningSystem.Data
             _list = new List<object>();
             _db = db;
         }
-
+       
         public BaseRepository<T> GetRepository<T>() where T : class, IBaseEntity {
             var repo =  _list.OfType<BaseRepository<T>>().FirstOrDefault();
             if (repo == null) {
@@ -26,6 +26,11 @@ namespace J_LearningSystem.Data
                 _list.Add(repo);
             }
             return repo;
+        }
+
+        public void Save()
+        {
+            _db.SaveChanges();
         }
 
         #region IDisposable Support

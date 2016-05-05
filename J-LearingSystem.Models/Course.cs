@@ -16,8 +16,10 @@ namespace J_LearingSystem.Models
         [Required]
         public string Number { get; set; }
 
+        [Required]
         public virtual Staff Staff { get; set; }
 
+        [Required]
         public virtual Schedule Schedule { get; set; } 
 
         public virtual ICollection<Quiz> Quizs { get; set; } = new HashSet<Quiz>();
