@@ -25,14 +25,9 @@ namespace J_Learning.Web.Controllers
         }
 
         // GET: Topic/Create
-        public ActionResult Create(string courseId)
+        public ActionResult Create()
         {
-            var course = UnitOfWork.GetRepository<Course>().GetById(courseId);
-
-            var model = new Topic()
-            {
-                Course = new Course() { Id = courseId }
-            };
+            var model = new Topic();
             return View(model);
         }
 
@@ -42,7 +37,6 @@ namespace J_Learning.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                topic.Course = UnitOfWork.GetRepository<Course>().GetById(topic.Course.Id);
                 UnitOfWork.GetRepository<Topic>().Add(topic);
                 UnitOfWork.Save();
                 return RedirectToAction("Index");
@@ -64,8 +58,8 @@ namespace J_Learning.Web.Controllers
             if (ModelState.IsValid)
             {
                 var model = UnitOfWork.GetRepository<Topic>().GetById(topic.Id);
-                model.Title = topic.Title;
-                model.Time.ToString();
+                //model.TimeCreated.ToString();
+                model.Course = UnitOfWork.GetRepository<Course>().GetById(topic.Course.Id);
                 UnitOfWork.GetRepository<Topic>().Update(model);
                 UnitOfWork.Save();
                 return RedirectToAction("Index");
