@@ -258,6 +258,7 @@
     <Content Include="Views\Topic\Create.cshtml" />
     <Content Include="Views\Topic\Edit.cshtml" />
     <Content Include="Views\Topic\Delete.cshtml" />
+    <Content Include="Views\Quiz\_PartialQuizzesList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

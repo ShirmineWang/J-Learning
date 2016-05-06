@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201605051352402_DeleteForum.Designer.cs">
       <DependentUpon>201605051352402_DeleteForum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605061031287_Add-Migration addQuizTitle.cs" />
+    <Compile Include="Migrations\201605061031287_Add-Migration addQuizTitle.Designer.cs">
+      <DependentUpon>201605061031287_Add-Migration addQuizTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SystemContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605051352402_DeleteForum.resx">
       <DependentUpon>201605051352402_DeleteForum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605061031287_Add-Migration addQuizTitle.resx">
+      <DependentUpon>201605061031287_Add-Migration addQuizTitle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
