@@ -90,7 +90,7 @@ namespace J_Learning.Web.Controllers
             var model = UnitOfWork.GetRepository<Topic>().GetById(id);
             UnitOfWork.GetRepository<Topic>().Remove(model);
             UnitOfWork.Save();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = model.Course.Id });
         }
     }
 }

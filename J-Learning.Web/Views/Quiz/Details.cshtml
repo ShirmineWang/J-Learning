@@ -10,10 +10,11 @@
     </div>
     <div class="col-sm-6 text-right">
         <div class="btn-group">
-            <a href="@Url.Action("Index", "Quiz")" class="btn btn-default">
+            <a href="@Url.Action("Details", "Course", new { id = Model.Course.Id })" class="btn btn-default">
                 <span class="glyphicon glyphicon-arrow-left"></span> Back
             </a>
         </div>
+@if (User.IsInRole("Staff")) {
         <div class="btn-group">
             <a href="@Url.Action("Edit", "Quiz", new { id = Model.Id })" class="btn btn-warning">
                 <span class="glyphicon glyphicon-edit"></span>
@@ -22,6 +23,7 @@
                 <span class="glyphicon glyphicon-trash"></span>
             </a>
         </div>
+}
     </div>
 </div>
 <hr />
@@ -43,7 +45,7 @@
     </div>
     <div class="col-sm-6 text-right">
         <div class="btn-group">
-            <a href="@Url.Action("Create", "Question", new { quizId = Model.Id })" class="btn btn-primary">
+            <a href="#" class="btn btn-primary">
                 <span class="glyphicon glyphicon-plus"></span> Create Question
             </a>
         </div>

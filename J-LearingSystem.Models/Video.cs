@@ -13,6 +13,9 @@ namespace J_LearingSystem.Models
         public string FileName { get; set; }
 
         [Required]
+        public string Title { get; set; }
+
+        [Required]
         public DateTime Time { get; set; }
 
         [Required]

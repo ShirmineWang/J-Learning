@@ -1,0 +1,40 @@
+﻿@model IEnumerable<J_LearingSystem.Models.Video>
+
+<table class="table table-striped table-condensed table-hover">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Time
+        </th>
+        <th>
+            Course
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Title
+        </td>
+        <td>
+            @item.Time.ToShortDateString()
+        </td>
+        <td>
+            @item.Course.Name
+        </td>
+        <td>
+            @Html.ActionLink("View", "Details", "Video", new { id = item.Id }, new { @class = "btn btn-sm btn-default" })
+@if (User.IsInRole("Staff")) {
+            <div class="btn-group btn-group-sm">
+                <a href="@Url.Action("Delete", "Video", new { id = item.Id })" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </div>   
+}
+        </td>
+    </tr>
+}
+</table>

@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201605061031287_Add-Migration addQuizTitle.Designer.cs">
       <DependentUpon>201605061031287_Add-Migration addQuizTitle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605061530090_FixTitleForVideo.cs" />
+    <Compile Include="Migrations\201605061530090_FixTitleForVideo.Designer.cs">
+      <DependentUpon>201605061530090_FixTitleForVideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SystemContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605061031287_Add-Migration addQuizTitle.resx">
       <DependentUpon>201605061031287_Add-Migration addQuizTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605061530090_FixTitleForVideo.resx">
+      <DependentUpon>201605061530090_FixTitleForVideo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

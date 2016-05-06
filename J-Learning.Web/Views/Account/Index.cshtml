@@ -7,11 +7,12 @@
 
 <h2>@ViewBag.Title</h2>
 
-@if(User.IsInRole("Admin"))
-{
+<a href="@Url.Action("Index","Manage")" class="btn btn-default">Manage Account</a>
+
+@if (User.IsInRole("Admin")) {
     <a href="@Url.Action("Index","Schedule")" class="btn btn-default">Schedules</a>
-    <a href="@Url.Action("Index","Person", new { t = "Staff" })" class="btn btn-default">Staffs</a>
-    <a href="@Url.Action("Index","Person", new { t = "Student" })" class="btn btn-default">Students</a>
+    @*<a href="@Url.Action("Index","Person", new { t = "Staff" })" class="btn btn-default">Staffs</a>
+    <a href="@Url.Action("Index","Person", new { t = "Student" })" class="btn btn-default">Students</a>*@
 
 }
 else if (User.IsInRole("Staff")) {

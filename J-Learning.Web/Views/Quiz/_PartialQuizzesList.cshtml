@@ -21,6 +21,7 @@
         </td>
         <td>
             @Html.ActionLink("View", "Details", "Quiz", new { id = item.Id }, new { @class = "btn btn-sm btn-default" })
+@if (User.IsInRole("Staff")) {
             <div class="btn-group btn-group-sm">
                 <a href="@Url.Action("Edit", "Quiz", new { id = item.Id })" class="btn btn-warning">
                     <span class="glyphicon glyphicon-edit"></span>
@@ -28,7 +29,8 @@
                 <a href="@Url.Action("Delete", "Quiz", new { id = item.Id })" class="btn btn-danger">
                     <span class="glyphicon glyphicon-trash"></span>
                 </a>
-            </div>          
+            </div> 
+}
         </td>
     </tr>
 }

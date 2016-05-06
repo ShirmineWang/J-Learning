@@ -1,7 +1,7 @@
-﻿@model J_LearingSystem.Models.Topic
+﻿@model J_LearingSystem.Models.Video
 
 @{
-    ViewBag.Title = "Topic Details";
+    ViewBag.Title = "Video";
 }
 
 <div class="row top-toolbar">
@@ -16,10 +16,7 @@
         </div>
 @if (User.IsInRole("Staff")) {
         <div class="btn-group">
-            <a href="@Url.Action("Edit", "Topic", new { id = Model.Id })" class="btn btn-warning">
-                <span class="glyphicon glyphicon-edit"></span>
-            </a>
-            <a href="@Url.Action("Delete", "Topic", new { id = Model.Id })" class="btn btn-danger">
+            <a href="@Url.Action("Delete", "Video", new { id = Model.Id })" class="btn btn-danger">
                 <span class="glyphicon glyphicon-trash"></span>
             </a>
         </div>
@@ -28,8 +25,10 @@
 </div>
 
 <hr />
+
 <div>
     <dl class="dl-horizontal">
+
         <dt>
             @Html.DisplayNameFor(model => model.Title)
         </dt>
@@ -38,10 +37,6 @@
             @Model.Title
         </dd>
 
-    </dl>
-</div>
-<div>
-    <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Time)
         </dt>
@@ -52,20 +47,13 @@
 
     </dl>
 </div>
-<div class="row top-toolbar">
-    <div class="col-sm-6">
-        <h4>Replies</h4>
-    </div>
-    <div class="col-sm-6 text-right">
-        <div class="btn-group">
-            <a href="#" class="btn btn-primary">
-                <span class="glyphicon glyphicon-plus"></span> Create Reply
-            </a>
-        </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <video controls="controls">
+            <source src="~/Content/Uploads/@(Model.FileName)" type="video/mp4" />
+        </video>
     </div>
 </div>
-@{
-    //Html.RenderPartial("~/Views/Question/_PartialRepliesList.cshtml", Model.Replies);
-}
 
 

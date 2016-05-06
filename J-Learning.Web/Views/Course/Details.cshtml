@@ -62,7 +62,7 @@
     </dl>
 </div>
 
-@if (User.IsInRole("Staff")) {
+@*@if (User.IsInRole("Staff")) {
     <div class="row top-toolbar">
         <div class="col-sm-6">
             <h4>Students</h4>
@@ -76,7 +76,7 @@
         </div>
     </div>
     //Html.RenderPartial("~/Views/Person/_PartialStudentList.cshtml", Model.Students);
-}
+}*@
 
 <div class="row top-toolbar">
     <div class="col-sm-6">
@@ -126,6 +126,6 @@
         }
     </div>
     @{
-        //Html.RenderPartial("~/Views/Video/_PartialTopicList.cshtml", Model.Videos);
+        Html.RenderPartial("~/Views/Video/_PartialVideoList.cshtml", Model.Videos);
     }
 </div>

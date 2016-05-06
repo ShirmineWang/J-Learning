@@ -79,7 +79,7 @@ namespace J_Learning.Web.Controllers
             var model = UnitOfWork.GetRepository<Quiz>().GetById(id);
             UnitOfWork.GetRepository<Quiz>().Remove(model);
             UnitOfWork.Save();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = model.Course.Id });
         }
     }
 }
