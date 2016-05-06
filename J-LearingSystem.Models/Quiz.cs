@@ -15,6 +15,9 @@ namespace J_LearingSystem.Models
         [Required]
         public DateTime TimeCreated { get; set; }
 
+        [Required]
+        public string Title { get; set; }
+
         public virtual ICollection<Question> Questions { get; set; } = new HashSet<Question>(); 
 
         public Quiz() {
