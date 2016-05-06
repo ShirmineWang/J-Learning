@@ -175,6 +175,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\TopicController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -252,9 +253,15 @@
     <Content Include="Views\Quiz\Create.cshtml" />
     <Content Include="Views\Quiz\Edit.cshtml" />
     <Content Include="Views\Quiz\Delete.cshtml" />
+    <Content Include="Views\Topic\Index.cshtml" />
+    <Content Include="Views\Topic\Details.cshtml" />
+    <Content Include="Views\Topic\Create.cshtml" />
+    <Content Include="Views\Topic\Edit.cshtml" />
+    <Content Include="Views\Topic\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Forum\" />
     <Folder Include="Views\Staff\" />
     <Folder Include="Views\Student\" />
   </ItemGroup>
