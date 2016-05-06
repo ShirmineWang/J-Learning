@@ -37,6 +37,7 @@ namespace J_LearingSystem.Models
         {
             get
             {
+                if (Schedule == null) return false;
                 return (Schedule.StartTime <= DateTime.Now && Schedule.StopTime >= DateTime.Now);
             }
         }

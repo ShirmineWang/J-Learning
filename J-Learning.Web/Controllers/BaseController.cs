@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
+using J_LearningSystem.BL;
 
 namespace J_Learning.Web.Controllers
 {
@@ -34,6 +35,18 @@ namespace J_Learning.Web.Controllers
             {
                 if (_unitOfWork == null) _unitOfWork = new UnitOfWork(Db);
                 return _unitOfWork;
+            }
+        }
+
+
+
+        private ApplicationUserManager _applicationUserManager;
+        public ApplicationUserManager ApplicationUserManager
+        {
+            get
+            {
+                if (_applicationUserManager == null) _applicationUserManager = HttpContext.GetOwinContext().Get<ApplicationUserManager>();
+                return _applicationUserManager;
             }
         }
     }
