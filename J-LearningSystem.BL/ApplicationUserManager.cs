@@ -92,5 +92,10 @@ namespace J_LearningSystem.BL {
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context) {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
+
+        public Task<bool> HasBeenVerifiedAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
